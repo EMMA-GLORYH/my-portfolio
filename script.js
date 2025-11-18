@@ -1,4 +1,40 @@
 // ======================================
+// ANIMATED STATISTICS COUNTER
+// ======================================
+
+const statNumbers = document.querySelectorAll('.stat-number');
+
+const animateStats = (entries, observer) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            const target = parseInt(entry.target.getAttribute('data-target'));
+            const duration = 2000; // 2 seconds
+            const increment = target / (duration / 16); // 60fps
+            let current = 0;
+
+            const updateCounter = () => {
+                current += increment;
+                if (current < target) {
+                    entry.target.textContent = Math.ceil(current);
+                    requestAnimationFrame(updateCounter);
+                } else {
+                    entry.target.textContent = target + '+';
+                }
+            };
+
+            updateCounter();
+            observer.unobserve(entry.target);
+        }
+    });
+};
+
+const statsObserver = new IntersectionObserver(animateStats, {
+    threshold: 0.5
+});
+
+statNumbers.forEach(stat => statsObserver.observe(stat));
+
+// ======================================
 // MOBILE MENU TOGGLE
 // ======================================
 
