@@ -1,4 +1,104 @@
 // ======================================
+// CV DOWNLOAD HANDLER
+// ======================================
+
+const cvDownloadBtn = document.getElementById('cvDownloadBtn');
+
+if (cvDownloadBtn) {
+    cvDownloadBtn.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        // Try to check if CV file exists and download it
+        const cvPath = 'files/Elijah_Hienwo_CV.pdf';
+
+        // Attempt to fetch the file
+        fetch(cvPath, { method: 'HEAD' })
+            .then(response => {
+                if (response.ok) {
+                    // File exists, proceed with download
+                    const link = document.createElement('a');
+                    link.href = cvPath;
+                    link.download = 'Elijah_Hienwo_CV.pdf';
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                    showNotification('CV download started!', 'success');
+                } else {
+                    // File doesn't exist, show professional modal
+                    showCVModal();
+                }
+            })
+            .catch(error => {
+                // Error checking file, show professional modal
+                showCVModal();
+            });
+    });
+}
+
+// Professional CV Modal
+function showCVModal() {
+    // Create modal overlay
+    const modal = document.createElement('div');
+    modal.className = 'cv-modal';
+    modal.innerHTML = `
+        <div class="cv-modal-content">
+            <button class="cv-modal-close" onclick="this.parentElement.parentElement.remove()">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="cv-modal-icon">
+                <i class="fas fa-file-pdf"></i>
+            </div>
+            <h3>Request My CV</h3>
+            <p>I'd love to share my CV with you! Please choose your preferred method:</p>
+            
+            <div class="cv-options">
+                <a href="mailto:elijah.hienwo@example.com?subject=CV%20Request&body=Hello%20Elijah,%0D%0A%0D%0AI%20would%20like%20to%20request%20your%20CV.%0D%0A%0D%0AThank%20you!" 
+                   class="cv-option">
+                    <i class="fas fa-envelope"></i>
+                    <span>Request via Email</span>
+                </a>
+                
+                <a href="https://wa.me/233504579408?text=Hi%20Elijah!%20I%27d%20like%20to%20request%20your%20CV.%20Thank%20you!" 
+                   target="_blank" class="cv-option">
+                    <i class="fab fa-whatsapp"></i>
+                    <span>Request via WhatsApp</span>
+                </a>
+                
+                <a href="https://linkedin.com/in/elijah-hienwo" 
+                   target="_blank" class="cv-option">
+                    <i class="fab fa-linkedin"></i>
+                    <span>Connect on LinkedIn</span>
+                </a>
+                
+                <a href="#contact" 
+                   class="cv-option" 
+                   onclick="this.parentElement.parentElement.parentElement.parentElement.remove()">
+                    <i class="fas fa-paper-plane"></i>
+                    <span>Send Message</span>
+                </a>
+            </div>
+            
+            <p class="cv-note">
+                <i class="fas fa-info-circle"></i>
+                I'll respond within 24 hours with my latest CV!
+            </p>
+        </div>
+    `;
+
+    document.body.appendChild(modal);
+
+    // Add animation
+    setTimeout(() => modal.classList.add('show'), 10);
+
+    // Close on outside click
+    modal.addEventListener('click', function (e) {
+        if (e.target === modal) {
+            modal.remove();
+        }
+    });
+}
+
+// ======================================
 // ANIMATED STATISTICS COUNTER
 // ======================================
 
