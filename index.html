@@ -21,6 +21,19 @@
 
 <body>
 
+    <!-- PROFESSIONAL PRELOADER -->
+    <div class="preloader" id="preloader">
+        <div class="preloader-content">
+            <div class="loader-ring"></div>
+            <div class="loader-text">EEH</div>
+        </div>
+    </div>
+
+    <!-- SCROLL TO TOP BUTTON -->
+    <button class="scroll-to-top" id="scrollToTop" aria-label="Scroll to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
     <!-- NAVIGATION BAR -->
     <nav class="navbar">
         <div class="container">
@@ -29,10 +42,12 @@
                 <h2>EEH<span>.</span></h2>
             </div>
             <ul class="nav-menu" id="navMenu">
-                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#home" class="nav-link active">Home</a></li>
                 <li><a href="#about" class="nav-link">About</a></li>
                 <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#experience" class="nav-link">Experience</a></li>
                 <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#testimonials" class="nav-link">Testimonials</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
             <div class="hamburger" id="hamburger">
@@ -50,7 +65,10 @@
                 <div class="hero-content">
                     <p class="hero-subtitle">Hello, I'm</p>
                     <h1 class="hero-title">Elijah Emmanuel Hienwo</h1>
-                    <h2 class="hero-role">Full-Stack Developer | ICT Educator | Tech Innovator</h2>
+                    <h2 class="hero-role">
+                        <span class="typing-text"></span>
+                        <span class="typing-cursor">|</span>
+                    </h2>
                     <p class="hero-description">
                         Passionate about building digital solutions where technology meets education.
                         Specializing in web applications, mobile solutions, and transforming ideas into reality
@@ -93,7 +111,7 @@
                     <div class="stat-icon">
                         <i class="fas fa-code"></i>
                     </div>
-                    <h3 class="stat-number" data-target="1">0</h3>
+                    <h3 class="stat-number" data-target="20">0</h3>
                     <p class="stat-label">Projects Completed</p>
                 </div>
                 <div class="stat-item">
@@ -107,14 +125,14 @@
                     <div class="stat-icon">
                         <i class="fas fa-clock"></i>
                     </div>
-                    <h3 class="stat-number" data-target="10">0</h3>
+                    <h3 class="stat-number" data-target="1000">0</h3>
                     <p class="stat-label">Hours of Coding</p>
                 </div>
                 <div class="stat-item">
                     <div class="stat-icon">
                         <i class="fas fa-trophy"></i>
                     </div>
-                    <h3 class="stat-number" data-target="4">0</h3>
+                    <h3 class="stat-number" data-target="15">0</h3>
                     <p class="stat-label">Technologies Mastered</p>
                 </div>
             </div>
@@ -130,8 +148,7 @@
             </div>
             <div class="about-content">
                 <div class="about-image">
-                  <!-- Replace with your actual image -->
-                   <img src="images/profile.jpg" alt="Elijah Emmanuel Hienwo">
+                    <img src="images/profile.jpg" alt="Elijah Emmanuel Hienwo">
                 </div>
                 <div class="about-text">
                     <h3>Multi-Talented Developer & Educator</h3>
@@ -178,7 +195,7 @@
         </div>
     </section>
 
-    <!-- SKILLS SECTION -->
+    <!-- SKILLS SECTION WITH PROGRESS BARS -->
     <section id="skills" class="skills">
         <div class="container">
             <div class="section-header">
@@ -192,12 +209,34 @@
                         <i class="fas fa-laptop-code"></i>
                     </div>
                     <h3>Web Development</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">React</span>
-                        <span class="skill-tag">HTML5</span>
-                        <span class="skill-tag">CSS3</span>
-                        <span class="skill-tag">JavaScript</span>
-                        <span class="skill-tag">Responsive Design</span>
+                    <div class="skill-bars">
+                        <div class="skill-bar">
+                            <div class="skill-info">
+                                <span>React</span>
+                                <span>85%</span>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="skill-progress-bar" data-progress="85"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-info">
+                                <span>HTML5 & CSS3</span>
+                                <span>95%</span>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="skill-progress-bar" data-progress="95"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-info">
+                                <span>JavaScript</span>
+                                <span>80%</span>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="skill-progress-bar" data-progress="80"></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -207,11 +246,34 @@
                         <i class="fas fa-database"></i>
                     </div>
                     <h3>Database & Backend</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">MySQL</span>
-                        <span class="skill-tag">SQL</span>
-                        <span class="skill-tag">Firebase</span>
-                        <span class="skill-tag">Database Design</span>
+                    <div class="skill-bars">
+                        <div class="skill-bar">
+                            <div class="skill-info">
+                                <span>MySQL</span>
+                                <span>85%</span>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="skill-progress-bar" data-progress="85"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-info">
+                                <span>Firebase</span>
+                                <span>80%</span>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="skill-progress-bar" data-progress="80"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-info">
+                                <span>SQL</span>
+                                <span>90%</span>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="skill-progress-bar" data-progress="90"></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -221,10 +283,25 @@
                         <i class="fas fa-mobile-alt"></i>
                     </div>
                     <h3>Mobile Development</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Android Development</span>
-                        <span class="skill-tag">Mobile UI/UX</span>
-                        <span class="skill-tag">Cross-Platform Apps</span>
+                    <div class="skill-bars">
+                        <div class="skill-bar">
+                            <div class="skill-info">
+                                <span>Android Development</span>
+                                <span>75%</span>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="skill-progress-bar" data-progress="75"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-info">
+                                <span>Mobile UI/UX</span>
+                                <span>80%</span>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="skill-progress-bar" data-progress="80"></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -234,38 +311,81 @@
                         <i class="fab fa-microsoft"></i>
                     </div>
                     <h3>Microsoft Suite</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Word</span>
-                        <span class="skill-tag">Excel</span>
-                        <span class="skill-tag">PowerPoint</span>
-                        <span class="skill-tag">Publisher</span>
-                        <span class="skill-tag">Access</span>
+                    <div class="skill-bars">
+                        <div class="skill-bar">
+                            <div class="skill-info">
+                                <span>Word & PowerPoint</span>
+                                <span>95%</span>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="skill-progress-bar" data-progress="95"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-info">
+                                <span>Excel & Access</span>
+                                <span>85%</span>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="skill-progress-bar" data-progress="85"></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
 
-                <!-- Desktop Applications -->
-                <div class="skill-category">
-                    <div class="category-icon">
-                        <i class="fas fa-desktop"></i>
-                    </div>
-                    <h3>Desktop Applications</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Desktop App Development</span>
-                        <span class="skill-tag">UI/UX Design</span>
-                        <span class="skill-tag">System Integration</span>
+    <!-- EXPERIENCE/TIMELINE SECTION -->
+    <section id="experience" class="experience">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">My Journey</h2>
+                <p class="section-subtitle">Education & Experience Timeline</p>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <div class="timeline-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <h3>University Education</h3>
+                        <span class="timeline-date">2020 - Present</span>
+                        <p>Pursuing higher education at University of Education, Winneba, specializing in ICT and
+                            Education.</p>
                     </div>
                 </div>
-
-                <!-- AI & Problem Solving -->
-                <div class="skill-category">
-                    <div class="category-icon">
-                        <i class="fas fa-brain"></i>
+                <div class="timeline-item right">
+                    <div class="timeline-content">
+                        <div class="timeline-icon">
+                            <i class="fas fa-chalkboard-teacher"></i>
+                        </div>
+                        <h3>ICT Educator</h3>
+                        <span class="timeline-date">2021 - Present</span>
+                        <p>Teaching ICT to students, making technology accessible and exciting through hands-on projects
+                            and practical applications.</p>
                     </div>
-                    <h3>AI & Innovation</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">AI Integration</span>
-                        <span class="skill-tag">Problem Solving</span>
-                        <span class="skill-tag">Tech Innovation</span>
+                </div>
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <div class="timeline-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h3>Full-Stack Development</h3>
+                        <span class="timeline-date">2022 - Present</span>
+                        <p>Building responsive web applications, mobile apps, and desktop solutions for various clients
+                            and personal projects.</p>
+                    </div>
+                </div>
+                <div class="timeline-item right">
+                    <div class="timeline-content">
+                        <div class="timeline-icon">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <h3>Freelance Projects</h3>
+                        <span class="timeline-date">2023 - Present</span>
+                        <p>Successfully delivered 20+ projects including e-commerce platforms, management systems, and
+                            educational applications.</p>
                     </div>
                 </div>
             </div>
@@ -284,9 +404,7 @@
                 <!-- Project 1 - E-commerce -->
                 <div class="project-card">
                     <div class="project-image">
-                        <!-- Replace 'project-ecommerce.jpg' with your actual image name -->
                         <img src="images/project-ecommerce.jpg" alt="E-Commerce Platform" class="project-img">
-                        <!-- Fallback icon if image doesn't load -->
                         <i class="fas fa-shopping-cart project-icon"></i>
                     </div>
                     <div class="project-content">
@@ -443,6 +561,95 @@
         </div>
     </section>
 
+    <!-- TESTIMONIALS SECTION -->
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Testimonials</h2>
+                <p class="section-subtitle">What people say about my work</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-icon">
+                        <i class="fas fa-quote-left"></i>
+                    </div>
+                    <p class="testimonial-text">
+                        "Elijah is an exceptional developer with great attention to detail. He delivered our e-commerce
+                        platform ahead of schedule with outstanding quality."
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <i class="fas fa-user-circle"></i>
+                        </div>
+                        <div class="author-info">
+                            <h4>Emmanuel Mensah</h4>
+                            <p>Business Owner</p>
+                        </div>
+                    </div>
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-icon">
+                        <i class="fas fa-quote-left"></i>
+                    </div>
+                    <p class="testimonial-text">
+                        "Working with Elijah was a pleasure. His teaching style made complex concepts easy to
+                        understand, and his technical skills are impressive."
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <i class="fas fa-user-circle"></i>
+                        </div>
+                        <div class="author-info">
+                            <h4>Grace Appiah</h4>
+                            <p>Student</p>
+                        </div>
+                    </div>
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-icon">
+                        <i class="fas fa-quote-left"></i>
+                    </div>
+                    <p class="testimonial-text">
+                        "Highly recommend Elijah for any development project. Professional, reliable, and delivers
+                        excellent results every time."
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <i class="fas fa-user-circle"></i>
+                        </div>
+                        <div class="author-info">
+                            <h4>Kwame Osei</h4>
+                            <p>Project Manager</p>
+                        </div>
+                    </div>
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- WHY HIRE ME SECTION -->
     <section class="why-hire-me">
         <div class="container">
@@ -552,18 +759,26 @@
                     <form class="contact-form" id="contactForm">
                         <div class="form-group">
                             <input type="text" id="name" name="name" placeholder="Your Name" required>
+                            <span class="form-error"></span>
                         </div>
                         <div class="form-group">
                             <input type="email" id="email" name="email" placeholder="Your Email" required>
+                            <span class="form-error"></span>
                         </div>
                         <div class="form-group">
                             <input type="text" id="subject" name="subject" placeholder="Subject" required>
+                            <span class="form-error"></span>
                         </div>
                         <div class="form-group">
                             <textarea id="message" name="message" rows="5" placeholder="Your Message"
                                 required></textarea>
+                            <span class="form-error"></span>
                         </div>
-                        <button type="submit" class="btn btn-primary">Send Message</button>
+                        <button type="submit" class="btn btn-primary">
+                            <span class="btn-text">Send Message</span>
+                            <span class="btn-loader"></span>
+                        </button>
+                        <div class="form-status"></div>
                     </form>
                 </div>
             </div>
@@ -574,7 +789,7 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <p>&copy; 2024 Elijah EmmanueLl Hienwo. All Rights Reserved.</p>
+                <p>&copy; 2024 Elijah Emmanuel Hienwo. All Rights Reserved.</p>
                 <p>Built with passion and dedication | Full-Stack Developer & Educator</p>
                 <div class="footer-social">
                     <a href="https://github.com/EMMA-GLORYH" target="_blank"><i class="fab fa-github"></i></a>
