@@ -185,7 +185,7 @@ function showNotification(message, type = 'info') {
         top: '90px',
         right: '20px',
         padding: '1rem 1.5rem',
-        backgroundColor: type === 'success' ? '#10b981' : type === 'error' ? '#ef4444' : '#3b82f6',
+        backgroundColor: type === 'success' ? '#059669' : type === 'error' ? '#dc2626' : '#1e3a8a',
         color: 'white',
         borderRadius: '0.5rem',
         boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1)',
@@ -274,7 +274,7 @@ Object.assign(scrollTopBtn.style, {
     right: '30px',
     width: '50px',
     height: '50px',
-    backgroundColor: '#2563eb',
+    backgroundColor: '#1e3a8a',
     color: 'white',
     border: 'none',
     borderRadius: '50%',
@@ -311,11 +311,11 @@ scrollTopBtn.addEventListener('click', () => {
 // Hover effect for scroll-to-top button
 scrollTopBtn.addEventListener('mouseenter', () => {
     scrollTopBtn.style.backgroundColor = '#1e40af';
-    scrollTopBtn.style.transform = 'translateY(-5px)';
+    scrollTopBtn.style.transform = 'translateY(-3px)';
 });
 
 scrollTopBtn.addEventListener('mouseleave', () => {
-    scrollTopBtn.style.backgroundColor = '#2563eb';
+    scrollTopBtn.style.backgroundColor = '#1e3a8a';
     scrollTopBtn.style.transform = 'translateY(0)';
 });
 
@@ -403,10 +403,10 @@ animateCircles();
 // CONSOLE MESSAGE
 // ======================================
 
-console.log('%c👋 Hello Developer!', 'color: #2563eb; font-size: 20px; font-weight: bold;');
-console.log('%cWelcome to my portfolio! Built with passion by Elijah Hienwo', 'color: #6b7280; font-size: 14px;');
-console.log('%cInterested in working together? Let\'s connect!', 'color: #10b981; font-size: 14px;');
-console.log('%cGitHub: https://github.com/EMMA-GLORYH', 'color: #3b82f6; font-size: 12px;');
+console.log('%c👋 Hello Developer!', 'color: #1e3a8a; font-size: 20px; font-weight: bold;');
+console.log('%cWelcome to my portfolio! Built with passion by Elijah Hienwo', 'color: #64748b; font-size: 14px;');
+console.log('%cInterested in working together? Let\'s connect!', 'color: #059669; font-size: 14px;');
+console.log('%cGitHub: https://github.com/EMMA-GLORYH', 'color: #1e40af; font-size: 12px;');
 
 // ======================================
 // PERFORMANCE MONITORING (Optional)
@@ -466,4 +466,4 @@ if (contactForm) {
 // END OF SCRIPT
 // ======================================
 
-console.log('%c✅ All scripts loaded successfully!', 'color: #10b981; font-weight: bold;');
+console.log('%c✅ All scripts loaded successfully!', 'color: #059669; font-weight: bold;');
