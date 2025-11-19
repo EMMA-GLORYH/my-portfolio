@@ -9,6 +9,10 @@
     <meta name="keywords"
         content="Full-Stack Developer, ICT Teacher, React Developer, Mobile App Developer, Ghana Developer">
     <meta name="author" content="Elijah Hienwo">
+    <meta property="og:title" content="Elijah Hienwo | Full-Stack Developer & Educator">
+    <meta property="og:description"
+        content="Passionate Full-Stack Developer specializing in Web, Mobile & Desktop Solutions">
+    <meta property="og:type" content="website">
 
     <title>Elijah Hienwo | Full-Stack Developer & Educator</title>
 
@@ -26,8 +30,12 @@
         <div class="preloader-content">
             <div class="loader-ring"></div>
             <div class="loader-text">EEH</div>
+            <p class="loading-text">Loading Excellence...</p>
         </div>
     </div>
+
+    <!-- SCROLL PROGRESS BAR -->
+    <div class="scroll-progress" id="scrollProgress"></div>
 
     <!-- SCROLL TO TOP BUTTON -->
     <button class="scroll-to-top" id="scrollToTop" aria-label="Scroll to top">
@@ -50,10 +58,15 @@
                 <li><a href="#testimonials" class="nav-link">Testimonials</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
-            <div class="hamburger" id="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
+            <div class="nav-actions">
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
             </div>
         </div>
     </nav>
@@ -73,9 +86,19 @@
         <div class="dotted-circle dotted-circle-2"></div>
         <div class="dotted-circle dotted-circle-3"></div>
 
+        <!-- Floating Particles -->
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+
         <div class="container">
             <div class="hero-wrapper">
                 <div class="hero-content">
+                    <div class="hero-badge">
+                        <i class="fas fa-star"></i>
+                        <span>Available for Hire</span>
+                    </div>
                     <p class="hero-subtitle">Hello, I'm</p>
                     <h1 class="hero-title">Elijah Emmanuel Hienwo</h1>
                     <h2 class="hero-role">
@@ -88,21 +111,32 @@
                         with clean, efficient code.
                     </p>
                     <div class="hero-buttons">
-                        <a href="#projects" class="btn btn-primary">View My Work</a>
-                        <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+                        <a href="#projects" class="btn btn-primary">
+                            <i class="fas fa-briefcase"></i> View My Work
+                        </a>
+                        <a href="#contact" class="btn btn-secondary">
+                            <i class="fas fa-envelope"></i> Get In Touch
+                        </a>
                         <a href="#" class="btn btn-download" id="cvDownloadBtn">
                             <i class="fas fa-download"></i> Download CV
                         </a>
                     </div>
                     <div class="social-links">
-                        <a href="https://github.com/EMMA-GLORYH" target="_blank" aria-label="GitHub">
+                        <a href="https://github.com/EMMA-GLORYH" target="_blank" aria-label="GitHub"
+                            data-tooltip="GitHub">
                             <i class="fab fa-github"></i>
                         </a>
-                        <a href="https://linkedin.com/in/elijah-hienwo" target="_blank" aria-label="LinkedIn">
+                        <a href="https://linkedin.com/in/elijah-hienwo" target="_blank" aria-label="LinkedIn"
+                            data-tooltip="LinkedIn">
                             <i class="fab fa-linkedin"></i>
                         </a>
-                        <a href="https://wa.me/233504579408" target="_blank" aria-label="WhatsApp">
+                        <a href="https://wa.me/233504579408" target="_blank" aria-label="WhatsApp"
+                            data-tooltip="WhatsApp">
                             <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="https://twitter.com/yourusername" target="_blank" aria-label="Twitter"
+                            data-tooltip="Twitter">
+                            <i class="fab fa-twitter"></i>
                         </a>
                     </div>
                 </div>
@@ -110,9 +144,19 @@
                     <div class="hero-image-wrapper">
                         <img src="images/profile.jpg" alt="Elijah Hienwo" class="hero-profile">
                         <div class="hero-shape"></div>
+                        <div class="status-badge">
+                            <span class="status-dot"></span>
+                            <span>Open to Work</span>
+                        </div>
                     </div>
                 </div>
             </div>
+        </div>
+
+        <!-- Scroll Down Indicator -->
+        <div class="scroll-indicator">
+            <span>Scroll Down</span>
+            <i class="fas fa-chevron-down"></i>
         </div>
     </section>
 
@@ -120,33 +164,37 @@
     <section class="stats">
         <div class="container">
             <div class="stats-grid">
-                <div class="stat-item">
+                <div class="stat-item" data-aos="fade-up" data-aos-delay="0">
                     <div class="stat-icon">
                         <i class="fas fa-code"></i>
                     </div>
-                    <h3 class="stat-number" data-target="2">0</h3>
+                    <h3 class="stat-number" data-target="20">0</h3>
                     <p class="stat-label">Projects Completed</p>
+                    <div class="stat-bar"></div>
                 </div>
-                <div class="stat-item">
+                <div class="stat-item" data-aos="fade-up" data-aos-delay="100">
                     <div class="stat-icon">
                         <i class="fas fa-users"></i>
                     </div>
                     <h3 class="stat-number" data-target="50">0</h3>
                     <p class="stat-label">Students Taught</p>
+                    <div class="stat-bar"></div>
                 </div>
-                <div class="stat-item">
+                <div class="stat-item" data-aos="fade-up" data-aos-delay="200">
                     <div class="stat-icon">
                         <i class="fas fa-clock"></i>
                     </div>
-                    <h3 class="stat-number" data-target="10">0</h3>
+                    <h3 class="stat-number" data-target="1000">0</h3>
                     <p class="stat-label">Hours of Coding</p>
+                    <div class="stat-bar"></div>
                 </div>
-                <div class="stat-item">
+                <div class="stat-item" data-aos="fade-up" data-aos-delay="300">
                     <div class="stat-icon">
                         <i class="fas fa-trophy"></i>
                     </div>
-                    <h3 class="stat-number" data-target="3">0</h3>
+                    <h3 class="stat-number" data-target="15">0</h3>
                     <p class="stat-label">Technologies Mastered</p>
+                    <div class="stat-bar"></div>
                 </div>
             </div>
         </div>
@@ -155,15 +203,21 @@
     <!-- ABOUT SECTION -->
     <section id="about" class="about">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-tag">Get To Know Me</span>
                 <h2 class="section-title">About Me</h2>
-                <p class="section-subtitle">Get to know who I am</p>
+                <p class="section-subtitle">Combining passion for technology with education excellence</p>
             </div>
             <div class="about-content">
-                <div class="about-image">
+                <div class="about-image" data-aos="fade-right">
                     <img src="images/profile.jpg" alt="Elijah Emmanuel Hienwo">
+                    <div class="about-shape"></div>
+                    <div class="experience-badge">
+                        <div class="badge-number">3+</div>
+                        <div class="badge-text">Years<br>Experience</div>
+                    </div>
                 </div>
-                <div class="about-text">
+                <div class="about-text" data-aos="fade-left">
                     <h3>Multi-Talented Developer & Educator</h3>
                     <p>
                         I'm a passionate student at the <strong>University of Education, Winneba</strong>,
@@ -180,6 +234,22 @@
                         <strong>My Philosophy:</strong> Just name what you want to use technology to solve,
                         and I'll be the right one to reach out to.
                     </p>
+
+                    <div class="about-stats-mini">
+                        <div class="mini-stat">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Clean Code</span>
+                        </div>
+                        <div class="mini-stat">
+                            <i class="fas fa-bolt"></i>
+                            <span>Fast Delivery</span>
+                        </div>
+                        <div class="mini-stat">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>Secure Solutions</span>
+                        </div>
+                    </div>
+
                     <div class="about-highlights">
                         <div class="highlight-item">
                             <i class="fas fa-graduation-cap"></i>
@@ -211,21 +281,24 @@
     <!-- SKILLS SECTION WITH PROGRESS BARS -->
     <section id="skills" class="skills">
         <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">My Skills</h2>
-                <p class="section-subtitle">Technologies I work with</p>
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-tag">My Expertise</span>
+                <h2 class="section-title">Skills & Technologies</h2>
+                <p class="section-subtitle">Technologies I work with to build amazing projects</p>
             </div>
             <div class="skills-grid">
                 <!-- Web Development -->
-                <div class="skill-category">
-                    <div class="category-icon">
-                        <i class="fas fa-laptop-code"></i>
+                <div class="skill-category" data-aos="fade-up" data-aos-delay="0">
+                    <div class="category-header">
+                        <div class="category-icon">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                        <h3>Web Development</h3>
                     </div>
-                    <h3>Web Development</h3>
                     <div class="skill-bars">
                         <div class="skill-bar">
                             <div class="skill-info">
-                                <span>React</span>
+                                <span><i class="fab fa-react"></i> React</span>
                                 <span>85%</span>
                             </div>
                             <div class="skill-progress">
@@ -234,7 +307,7 @@
                         </div>
                         <div class="skill-bar">
                             <div class="skill-info">
-                                <span>HTML5 & CSS3</span>
+                                <span><i class="fab fa-html5"></i> HTML5 & CSS3</span>
                                 <span>95%</span>
                             </div>
                             <div class="skill-progress">
@@ -243,7 +316,7 @@
                         </div>
                         <div class="skill-bar">
                             <div class="skill-info">
-                                <span>JavaScript</span>
+                                <span><i class="fab fa-js"></i> JavaScript</span>
                                 <span>80%</span>
                             </div>
                             <div class="skill-progress">
@@ -254,15 +327,17 @@
                 </div>
 
                 <!-- Database & Backend -->
-                <div class="skill-category">
-                    <div class="category-icon">
-                        <i class="fas fa-database"></i>
+                <div class="skill-category" data-aos="fade-up" data-aos-delay="100">
+                    <div class="category-header">
+                        <div class="category-icon">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <h3>Database & Backend</h3>
                     </div>
-                    <h3>Database & Backend</h3>
                     <div class="skill-bars">
                         <div class="skill-bar">
                             <div class="skill-info">
-                                <span>MySQL</span>
+                                <span><i class="fas fa-database"></i> MySQL</span>
                                 <span>85%</span>
                             </div>
                             <div class="skill-progress">
@@ -271,7 +346,7 @@
                         </div>
                         <div class="skill-bar">
                             <div class="skill-info">
-                                <span>Firebase</span>
+                                <span><i class="fas fa-fire"></i> Firebase</span>
                                 <span>80%</span>
                             </div>
                             <div class="skill-progress">
@@ -280,7 +355,7 @@
                         </div>
                         <div class="skill-bar">
                             <div class="skill-info">
-                                <span>SQL</span>
+                                <span><i class="fas fa-database"></i> SQL</span>
                                 <span>90%</span>
                             </div>
                             <div class="skill-progress">
@@ -291,15 +366,17 @@
                 </div>
 
                 <!-- Mobile Development -->
-                <div class="skill-category">
-                    <div class="category-icon">
-                        <i class="fas fa-mobile-alt"></i>
+                <div class="skill-category" data-aos="fade-up" data-aos-delay="200">
+                    <div class="category-header">
+                        <div class="category-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <h3>Mobile Development</h3>
                     </div>
-                    <h3>Mobile Development</h3>
                     <div class="skill-bars">
                         <div class="skill-bar">
                             <div class="skill-info">
-                                <span>Android Development</span>
+                                <span><i class="fab fa-android"></i> Android Development</span>
                                 <span>75%</span>
                             </div>
                             <div class="skill-progress">
@@ -308,7 +385,7 @@
                         </div>
                         <div class="skill-bar">
                             <div class="skill-info">
-                                <span>Mobile UI/UX</span>
+                                <span><i class="fas fa-paint-brush"></i> Mobile UI/UX</span>
                                 <span>80%</span>
                             </div>
                             <div class="skill-progress">
@@ -319,15 +396,17 @@
                 </div>
 
                 <!-- Microsoft Suite -->
-                <div class="skill-category">
-                    <div class="category-icon">
-                        <i class="fab fa-microsoft"></i>
+                <div class="skill-category" data-aos="fade-up" data-aos-delay="300">
+                    <div class="category-header">
+                        <div class="category-icon">
+                            <i class="fab fa-microsoft"></i>
+                        </div>
+                        <h3>Microsoft Suite</h3>
                     </div>
-                    <h3>Microsoft Suite</h3>
                     <div class="skill-bars">
                         <div class="skill-bar">
                             <div class="skill-info">
-                                <span>Word & PowerPoint</span>
+                                <span><i class="fas fa-file-word"></i> Word & PowerPoint</span>
                                 <span>95%</span>
                             </div>
                             <div class="skill-progress">
@@ -336,7 +415,7 @@
                         </div>
                         <div class="skill-bar">
                             <div class="skill-info">
-                                <span>Excel & Access</span>
+                                <span><i class="fas fa-file-excel"></i> Excel & Access</span>
                                 <span>85%</span>
                             </div>
                             <div class="skill-progress">
@@ -352,53 +431,58 @@
     <!-- EXPERIENCE/TIMELINE SECTION -->
     <section id="experience" class="experience">
         <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">My Journey</h2>
-                <p class="section-subtitle">Education & Experience Timeline</p>
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-tag">My Journey</span>
+                <h2 class="section-title">Experience & Education</h2>
+                <p class="section-subtitle">The path that shaped my career</p>
             </div>
             <div class="timeline">
-                <div class="timeline-item left">
+                <div class="timeline-item left" data-aos="fade-right">
                     <div class="timeline-content">
                         <div class="timeline-icon">
                             <i class="fas fa-graduation-cap"></i>
                         </div>
+                        <span class="timeline-date">2020 - Present</span>
                         <h3>University Education</h3>
-                        <span class="timeline-date">2023 - Present</span>
                         <p>Pursuing higher education at University of Education, Winneba, specializing in ICT and
                             Education.</p>
+                        <div class="timeline-tag">Education</div>
                     </div>
                 </div>
-                <div class="timeline-item right">
+                <div class="timeline-item right" data-aos="fade-left">
                     <div class="timeline-content">
                         <div class="timeline-icon">
                             <i class="fas fa-chalkboard-teacher"></i>
                         </div>
-                        <h3>ICT Educator</h3>
                         <span class="timeline-date">2021 - Present</span>
+                        <h3>ICT Educator</h3>
                         <p>Teaching ICT to students, making technology accessible and exciting through hands-on projects
                             and practical applications.</p>
+                        <div class="timeline-tag">Teaching</div>
                     </div>
                 </div>
-                <div class="timeline-item left">
+                <div class="timeline-item left" data-aos="fade-right">
                     <div class="timeline-content">
                         <div class="timeline-icon">
                             <i class="fas fa-code"></i>
                         </div>
-                        <h3>Full-Stack Development</h3>
                         <span class="timeline-date">2022 - Present</span>
+                        <h3>Full-Stack Development</h3>
                         <p>Building responsive web applications, mobile apps, and desktop solutions for various clients
                             and personal projects.</p>
+                        <div class="timeline-tag">Development</div>
                     </div>
                 </div>
-                <div class="timeline-item right">
+                <div class="timeline-item right" data-aos="fade-left">
                     <div class="timeline-content">
                         <div class="timeline-icon">
                             <i class="fas fa-rocket"></i>
                         </div>
+                        <span class="timeline-date">2023 - Present</span>
                         <h3>Freelance Projects</h3>
-                        <span class="timeline-date">2024 - Present</span>
-                        <p>Successfully delivered 3+ projects including e-commerce platforms,management systems, and
+                        <p>Successfully delivered 20+ projects including e-commerce platforms, management systems, and
                             educational applications.</p>
+                        <div class="timeline-tag">Freelance</div>
                     </div>
                 </div>
             </div>
@@ -408,163 +492,86 @@
     <!-- PROJECTS SECTION -->
     <section id="projects" class="projects">
         <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">My Projects</h2>
-                <p class="section-subtitle">Some of my recent work</p>
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-tag">Portfolio</span>
+                <h2 class="section-title">Featured Projects</h2>
+                <p class="section-subtitle">Some of my best work showcasing my skills</p>
             </div>
+
+            <!-- Project Filter -->
+            <div class="project-filter" data-aos="fade-up">
+                <button class="filter-btn active" data-filter="all">All Projects</button>
+                <button class="filter-btn" data-filter="web">Web Apps</button>
+                <button class="filter-btn" data-filter="mobile">Mobile</button>
+                <button class="filter-btn" data-filter="desktop">Desktop</button>
+            </div>
+
             <div class="projects-grid">
 
                 <!-- Project 1 - E-commerce -->
-                <div class="project-card">
+                <div class="project-card" data-category="web" data-aos="fade-up" data-aos-delay="0">
                     <div class="project-image">
                         <img src="images/project-ecommerce.jpg" alt="E-Commerce Platform" class="project-img">
                         <i class="fas fa-shopping-cart project-icon"></i>
+                        <div class="project-overlay">
+                            <div class="project-overlay-content">
+                                <h4>View Project</h4>
+                                <p>Click to explore</p>
+                            </div>
+                        </div>
                     </div>
                     <div class="project-content">
-                        <h3>E-Commerce Platform</h3>
+                        <div class="project-header">
+                            <h3>E-Commerce Platform</h3>
+                            <span class="project-badge">Featured</span>
+                        </div>
                         <p>Full-featured online shopping platform with secure payment integration, product management,
                             and user authentication.</p>
                         <div class="project-tech">
-                            <span>React</span>
-                            <span>Firebase</span>
-                            <span>MySQL</span>
+                            <span><i class="fab fa-react"></i> React</span>
+                            <span><i class="fas fa-fire"></i> Firebase</span>
+                            <span><i class="fas fa-database"></i> MySQL</span>
                         </div>
                         <div class="project-links">
                             <a href="https://github.com/EMMA-GLORYH" target="_blank" class="project-link">
-                                <i class="fab fa-github"></i> View Code
+                                <i class="fab fa-github"></i> Code
                             </a>
                             <a href="#" class="project-link">
-                                <i class="fas fa-external-link-alt"></i> Live Demo
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 2 - Portfolio -->
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="images/project-portfolio.jpg" alt="Professional Portfolios" class="project-img">
-                        <i class="fas fa-user-circle project-icon"></i>
-                    </div>
-                    <div class="project-content">
-                        <h3>Professional Portfolios</h3>
-                        <p>Custom-designed portfolio websites for professionals, featuring responsive layouts and modern
-                            animations.</p>
-                        <div class="project-tech">
-                            <span>HTML5</span>
-                            <span>CSS3</span>
-                            <span>JavaScript</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/EMMA-GLORYH" target="_blank" class="project-link">
-                                <i class="fab fa-github"></i> View Code
-                            </a>
-                            <a href="#" class="project-link">
-                                <i class="fas fa-external-link-alt"></i> Live Demo
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 3 - Delivery Management -->
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="images/project-delivery.jpg" alt="Delivery Management App" class="project-img">
-                        <i class="fas fa-truck project-icon"></i>
-                    </div>
-                    <div class="project-content">
-                        <h3>Delivery Management App</h3>
-                        <p>Android mobile app for tracking deliveries in real-time with driver assignment and route
-                            optimization.</p>
-                        <div class="project-tech">
-                            <span>Android</span>
-                            <span>Firebase</span>
-                            <span>Google Maps API</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/EMMA-GLORYH" target="_blank" class="project-link">
-                                <i class="fab fa-github"></i> View Code
-                            </a>
-                            <a href="#" class="project-link">
-                                <i class="fas fa-external-link-alt"></i> Live Demo
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 4 - Security App -->
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="images/project-security.jpg" alt="Security Monitoring System" class="project-img">
-                        <i class="fas fa-shield-alt project-icon"></i>
-                    </div>
-                    <div class="project-content">
-                        <h3>Security Monitoring System</h3>
-                        <p>Desktop application for security management with real-time alerts, incident reporting, and
-                            access control.</p>
-                        <div class="project-tech">
-                            <span>Desktop App</span>
-                            <span>MySQL</span>
-                            <span>Real-time Monitoring</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/EMMA-GLORYH" target="_blank" class="project-link">
-                                <i class="fab fa-github"></i> View Code
-                            </a>
-                            <a href="#" class="project-link">
-                                <i class="fas fa-external-link-alt"></i> Live Demo
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 5 - Educational Platform -->
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="images/project-education.jpg" alt="ICT Learning Platform" class="project-img">
-                        <i class="fas fa-graduation-cap project-icon"></i>
-                    </div>
-                    <div class="project-content">
-                        <h3>ICT Learning Platform</h3>
-                        <p>Interactive learning management system for ICT education with quizzes, video lessons, and
-                            progress tracking.</p>
-                        <div class="project-tech">
-                            <span>React</span>
-                            <span>Firebase</span>
-                            <span>Responsive Design</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/EMMA-GLORYH" target="_blank" class="project-link">
-                                <i class="fab fa-github"></i> View Code
-                            </a>
-                            <a href="#" class="project-link">
-                                <i class="fas fa-external-link-alt"></i> Live Demo
+                                <i class="fas fa-external-link-alt"></i> Demo
                             </a>
                         </div>
                     </div>
                 </div>
 
                 <!-- Project 6 - Project Management -->
-                <div class="project-card">
+                <div class="project-card" data-category="web" data-aos="fade-up" data-aos-delay="100">
                     <div class="project-image">
                         <img src="images/project-management.jpg" alt="Project Management System" class="project-img">
                         <i class="fas fa-tasks project-icon"></i>
+                        <div class="project-overlay">
+                            <div class="project-overlay-content">
+                                <h4>View Project</h4>
+                                <p>Click to explore</p>
+                            </div>
+                        </div>
                     </div>
                     <div class="project-content">
-                        <h3>Project Management System</h3>
+                        <div class="project-header">
+                            <h3>Project Management System</h3>
+                        </div>
                         <p>Comprehensive project management tool with task tracking, team collaboration, deadline
                             management, and real-time progress monitoring.</p>
                         <div class="project-tech">
-                            <span>React</span>
-                            <span>Firebase</span>
-                            <span>Real-time Updates</span>
+                            <span><i class="fab fa-react"></i> React</span>
+                            <span><i class="fas fa-fire"></i> Firebase</span>
+                            <span><i class="fas fa-sync-alt"></i> Real-time</span>
                         </div>
                         <div class="project-links">
                             <a href="https://github.com/EMMA-GLORYH" target="_blank" class="project-link">
-                                <i class="fab fa-github"></i> View Code
+                                <i class="fab fa-github"></i> Code
                             </a>
                             <a href="#" class="project-link">
-                                <i class="fas fa-external-link-alt"></i> Live Demo
+                                <i class="fas fa-external-link-alt"></i> Demo
                             </a>
                         </div>
                     </div>
@@ -577,86 +584,95 @@
     <!-- TESTIMONIALS SECTION -->
     <section id="testimonials" class="testimonials">
         <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Testimonials</h2>
-                <p class="section-subtitle">What people say about my work</p>
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-tag">Client Reviews</span>
+                <h2 class="section-title">What People Say</h2>
+                <p class="section-subtitle">Testimonials from satisfied clients and colleagues</p>
             </div>
-            <div class="testimonials-grid">
-                <div class="testimonial-card">
-                    <div class="testimonial-icon">
-                        <i class="fas fa-quote-left"></i>
-                    </div>
-                    <p class="testimonial-text">
-                        "Elijah is an exceptional developer with great attention to detail. He delivered our e-commerce
-                        platform ahead of schedule with outstanding quality."
-                    </p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">
-                            <i class="fas fa-user-circle"></i>
+            <div class="testimonials-slider" data-aos="fade-up">
+                <div class="testimonials-grid">
+                    <div class="testimonial-card">
+                        <div class="testimonial-header">
+                            <div class="testimonial-icon">
+                                <i class="fas fa-quote-left"></i>
+                            </div>
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
                         </div>
-                        <div class="author-info">
-                            <h4>Emmanuel Mensah</h4>
-                            <p>Business Owner</p>
+                        <p class="testimonial-text">
+                            "Elijah is an exceptional developer with great attention to detail. He delivered our
+                            e-commerce platform ahead of schedule with outstanding quality."
+                        </p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">
+                                <i class="fas fa-user-circle"></i>
+                            </div>
+                            <div class="author-info">
+                                <h4>Emmanuel Mensah</h4>
+                                <p>Business Owner</p>
+                            </div>
                         </div>
                     </div>
-                    <div class="testimonial-rating">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                </div>
 
-                <div class="testimonial-card">
-                    <div class="testimonial-icon">
-                        <i class="fas fa-quote-left"></i>
-                    </div>
-                    <p class="testimonial-text">
-                        "Working with Elijah was a pleasure. His teaching style made complex concepts easy to
-                        understand, and his technical skills are impressive."
-                    </p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">
-                            <i class="fas fa-user-circle"></i>
+                    <div class="testimonial-card">
+                        <div class="testimonial-header">
+                            <div class="testimonial-icon">
+                                <i class="fas fa-quote-left"></i>
+                            </div>
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
                         </div>
-                        <div class="author-info">
-                            <h4>Grace Appiah</h4>
-                            <p>Student</p>
+                        <p class="testimonial-text">
+                            "Working with Elijah was a pleasure. His teaching style made complex concepts easy to
+                            understand, and his technical skills are impressive."
+                        </p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">
+                                <i class="fas fa-user-circle"></i>
+                            </div>
+                            <div class="author-info">
+                                <h4>Grace Appiah</h4>
+                                <p>Student</p>
+                            </div>
                         </div>
                     </div>
-                    <div class="testimonial-rating">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                </div>
 
-                <div class="testimonial-card">
-                    <div class="testimonial-icon">
-                        <i class="fas fa-quote-left"></i>
-                    </div>
-                    <p class="testimonial-text">
-                        "Highly recommend Elijah for any development project. Professional, reliable, and delivers
-                        excellent results every time."
-                    </p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">
-                            <i class="fas fa-user-circle"></i>
+                    <div class="testimonial-card">
+                        <div class="testimonial-header">
+                            <div class="testimonial-icon">
+                                <i class="fas fa-quote-left"></i>
+                            </div>
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
                         </div>
-                        <div class="author-info">
-                            <h4>Kwame Osei</h4>
-                            <p>Project Manager</p>
+                        <p class="testimonial-text">
+                            "Highly recommend Elijah for any development project. Professional, reliable, and delivers
+                            excellent results every time."
+                        </p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">
+                                <i class="fas fa-user-circle"></i>
+                            </div>
+                            <div class="author-info">
+                                <h4>Kwame Osei</h4>
+                                <p>Project Manager</p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="testimonial-rating">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
                     </div>
                 </div>
             </div>
@@ -666,12 +682,13 @@
     <!-- WHY HIRE ME SECTION -->
     <section class="why-hire-me">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-tag">Why Choose Me</span>
                 <h2 class="section-title">Why Hire Me</h2>
-                <p class="section-subtitle">What makes me the right candidate</p>
+                <p class="section-subtitle">What makes me the perfect fit for your project</p>
             </div>
             <div class="why-grid">
-                <div class="why-card">
+                <div class="why-card" data-aos="fade-up" data-aos-delay="0">
                     <div class="why-icon">
                         <i class="fas fa-lightbulb"></i>
                     </div>
@@ -679,7 +696,7 @@
                     <p>I don't just code — I solve real problems. Every project I build addresses a genuine need with
                         practical, scalable solutions.</p>
                 </div>
-                <div class="why-card">
+                <div class="why-card" data-aos="fade-up" data-aos-delay="100">
                     <div class="why-icon">
                         <i class="fas fa-rocket"></i>
                     </div>
@@ -687,7 +704,7 @@
                     <p>Passionate about staying current with technology trends. I learn fast and adapt quickly to new
                         tools and frameworks.</p>
                 </div>
-                <div class="why-card">
+                <div class="why-card" data-aos="fade-up" data-aos-delay="200">
                     <div class="why-icon">
                         <i class="fas fa-users"></i>
                     </div>
@@ -695,7 +712,7 @@
                     <p>As an educator, I excel at communication and collaboration. I work well in teams and can explain
                         complex concepts clearly.</p>
                 </div>
-                <div class="why-card">
+                <div class="why-card" data-aos="fade-up" data-aos-delay="300">
                     <div class="why-icon">
                         <i class="fas fa-heart"></i>
                     </div>
@@ -703,7 +720,7 @@
                     <p>Technology is not just my career — it's my passion. I'm committed to delivering quality work and
                         continuous improvement.</p>
                 </div>
-                <div class="why-card">
+                <div class="why-card" data-aos="fade-up" data-aos-delay="0">
                     <div class="why-icon">
                         <i class="fas fa-check-circle"></i>
                     </div>
@@ -711,7 +728,7 @@
                     <p>I meet deadlines, maintain clean code, document my work, and communicate proactively throughout
                         projects.</p>
                 </div>
-                <div class="why-card">
+                <div class="why-card" data-aos="fade-up" data-aos-delay="100">
                     <div class="why-icon">
                         <i class="fas fa-graduation-cap"></i>
                     </div>
@@ -726,69 +743,94 @@
     <!-- CONTACT SECTION -->
     <section id="contact" class="contact">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-tag">Let's Connect</span>
                 <h2 class="section-title">Get In Touch</h2>
-                <p class="section-subtitle">Let's work together on your next project</p>
+                <p class="section-subtitle">Ready to work together? Let's make something amazing</p>
             </div>
             <div class="contact-content">
-                <div class="contact-info">
-                    <h3>Let's Connect</h3>
-                    <p>
-                        Whether you need a website, mobile app, desktop application, or any tech solution,
-                        I'm here to help bring your ideas to life. Let's discuss your project!
-                    </p>
+                <div class="contact-info" data-aos="fade-right">
+                    <div class="contact-info-header">
+                        <h3>Let's Work Together</h3>
+                        <p>
+                            Whether you need a website, mobile app, desktop application, or any tech solution,
+                            I'm here to help bring your ideas to life. Let's discuss your project!
+                        </p>
+                    </div>
                     <div class="contact-items">
                         <div class="contact-item">
-                            <i class="fas fa-phone"></i>
+                            <div class="contact-item-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
                             <div>
                                 <h4>Call Me</h4>
                                 <p><a href="tel:+233557881454">0557881454</a></p>
                             </div>
                         </div>
                         <div class="contact-item">
-                            <i class="fab fa-whatsapp"></i>
+                            <div class="contact-item-icon">
+                                <i class="fab fa-whatsapp"></i>
+                            </div>
                             <div>
                                 <h4>WhatsApp</h4>
                                 <p><a href="https://wa.me/233504579408" target="_blank">0504579408</a></p>
                             </div>
                         </div>
                         <div class="contact-item">
-                            <i class="fab fa-github"></i>
+                            <div class="contact-item-icon">
+                                <i class="fab fa-github"></i>
+                            </div>
                             <div>
                                 <h4>GitHub</h4>
                                 <p><a href="https://github.com/EMMA-GLORYH" target="_blank">EMMA-GLORYH</a></p>
                             </div>
                         </div>
                         <div class="contact-item">
-                            <i class="fab fa-linkedin"></i>
+                            <div class="contact-item-icon">
+                                <i class="fab fa-linkedin"></i>
+                            </div>
                             <div>
                                 <h4>LinkedIn</h4>
                                 <p><a href="https://linkedin.com/in/elijah-hienwo" target="_blank">Elijah Hienwo</a></p>
                             </div>
                         </div>
                     </div>
+
+                    <div class="contact-availability">
+                        <div class="availability-badge">
+                            <span class="availability-dot"></span>
+                            <span>Available for freelance work</span>
+                        </div>
+                        <p>Response time: Usually within 24 hours</p>
+                    </div>
                 </div>
-                <div class="contact-form-wrapper">
+                <div class="contact-form-wrapper" data-aos="fade-left">
                     <form class="contact-form" id="contactForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name"><i class="fas fa-user"></i> Your Name</label>
+                                <input type="text" id="name" name="name" placeholder="John Doe" required>
+                                <span class="form-error"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="email"><i class="fas fa-envelope"></i> Your Email</label>
+                                <input type="email" id="email" name="email" placeholder="john@example.com" required>
+                                <span class="form-error"></span>
+                            </div>
+                        </div>
                         <div class="form-group">
-                            <input type="text" id="name" name="name" placeholder="Your Name" required>
+                            <label for="subject"><i class="fas fa-tag"></i> Subject</label>
+                            <input type="text" id="subject" name="subject" placeholder="Project Inquiry" required>
                             <span class="form-error"></span>
                         </div>
                         <div class="form-group">
-                            <input type="email" id="email" name="email" placeholder="Your Email" required>
-                            <span class="form-error"></span>
-                        </div>
-                        <div class="form-group">
-                            <input type="text" id="subject" name="subject" placeholder="Subject" required>
-                            <span class="form-error"></span>
-                        </div>
-                        <div class="form-group">
-                            <textarea id="message" name="message" rows="5" placeholder="Your Message"
+                            <label for="message"><i class="fas fa-comment"></i> Your Message</label>
+                            <textarea id="message" name="message" rows="5" placeholder="Tell me about your project..."
                                 required></textarea>
                             <span class="form-error"></span>
                         </div>
-                        <button type="submit" class="btn btn-primary">
-                            <span class="btn-text">Send Message</span>
+                        <button type="submit" class="btn btn-primary btn-block">
+                            <span class="btn-text"><i class="fas fa-paper-plane"></i> Send Message</span>
                             <span class="btn-loader"></span>
                         </button>
                         <div class="form-status"></div>
@@ -802,12 +844,55 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
+                <div class="footer-brand">
+                    <h2>EEH<span>.</span></h2>
+                    <p>Building digital solutions with passion and precision</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><a href="#home">Home</a></li>
+                            <li><a href="#about">About</a></li>
+                            <li><a href="#skills">Skills</a></li>
+                            <li><a href="#projects">Projects</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Services</h4>
+                        <ul>
+                            <li><a href="#projects">Web Development</a></li>
+                            <li><a href="#projects">Mobile Apps</a></li>
+                            <li><a href="#projects">Desktop Apps</a></li>
+                            <li><a href="#contact">ICT Training</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Connect</h4>
+                        <ul>
+                            <li><a href="https://github.com/EMMA-GLORYH" target="_blank">GitHub</a></li>
+                            <li><a href="https://linkedin.com/in/elijah-hienwo" target="_blank">LinkedIn</a></li>
+                            <li><a href="https://wa.me/233504579408" target="_blank">WhatsApp</a></li>
+                            <li><a href="#contact">Contact Me</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
                 <p>&copy; 2024 Elijah Emmanuel Hienwo. All Rights Reserved.</p>
-                <p>Built with passion and dedication | Full-Stack Developer & Educator</p>
                 <div class="footer-social">
-                    <a href="https://github.com/EMMA-GLORYH" target="_blank"><i class="fab fa-github"></i></a>
-                    <a href="https://linkedin.com/in/elijah-hienwo" target="_blank"><i class="fab fa-linkedin"></i></a>
-                    <a href="https://wa.me/233504579408" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    <a href="https://github.com/EMMA-GLORYH" target="_blank" aria-label="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://linkedin.com/in/elijah-hienwo" target="_blank" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://wa.me/233504579408" target="_blank" aria-label="WhatsApp">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                    <a href="https://twitter.com/yourusername" target="_blank" aria-label="Twitter">
+                        <i class="fab fa-twitter"></i>
+                    </a>
                 </div>
             </div>
         </div>
@@ -818,3 +903,140 @@
 </body>
 
 </html>
+<a href="#" class="project-link">
+    <i class="fas fa-external-link-alt"></i> Demo
+</a>
+</div>
+</div>
+</div>
+
+<!-- Project 2 - Portfolio -->
+<div class="project-card" data-category="web" data-aos="fade-up" data-aos-delay="100">
+    <div class="project-image">
+        <img src="images/project-portfolio.jpg" alt="Professional Portfolios" class="project-img">
+        <i class="fas fa-user-circle project-icon"></i>
+        <div class="project-overlay">
+            <div class="project-overlay-content">
+                <h4>View Project</h4>
+                <p>Click to explore</p>
+            </div>
+        </div>
+    </div>
+    <div class="project-content">
+        <div class="project-header">
+            <h3>Professional Portfolios</h3>
+        </div>
+        <p>Custom-designed portfolio websites for professionals, featuring responsive layouts and modern
+            animations.</p>
+        <div class="project-tech">
+            <span><i class="fab fa-html5"></i> HTML5</span>
+            <span><i class="fab fa-css3-alt"></i> CSS3</span>
+            <span><i class="fab fa-js"></i> JavaScript</span>
+        </div>
+        <div class="project-links">
+            <a href="https://github.com/EMMA-GLORYH" target="_blank" class="project-link">
+                <i class="fab fa-github"></i> Code
+            </a>
+            <a href="#" class="project-link">
+                <i class="fas fa-external-link-alt"></i> Demo
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- Project 3 - Delivery Management -->
+<div class="project-card" data-category="mobile" data-aos="fade-up" data-aos-delay="200">
+    <div class="project-image">
+        <img src="images/project-delivery.jpg" alt="Delivery Management App" class="project-img">
+        <i class="fas fa-truck project-icon"></i>
+        <div class="project-overlay">
+            <div class="project-overlay-content">
+                <h4>View Project</h4>
+                <p>Click to explore</p>
+            </div>
+        </div>
+    </div>
+    <div class="project-content">
+        <div class="project-header">
+            <h3>Delivery Management App</h3>
+            <span class="project-badge new">New</span>
+        </div>
+        <p>Android mobile app for tracking deliveries in real-time with driver assignment and route
+            optimization.</p>
+        <div class="project-tech">
+            <span><i class="fab fa-android"></i> Android</span>
+            <span><i class="fas fa-fire"></i> Firebase</span>
+            <span><i class="fas fa-map"></i> Maps API</span>
+        </div>
+        <div class="project-links">
+            <a href="https://github.com/EMMA-GLORYH" target="_blank" class="project-link">
+                <i class="fab fa-github"></i> Code
+            </a>
+            <a href="#" class="project-link">
+                <i class="fas fa-external-link-alt"></i> Demo
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- Project 4 - Security App -->
+<div class="project-card" data-category="desktop" data-aos="fade-up" data-aos-delay="300">
+    <div class="project-image">
+        <img src="images/project-security.jpg" alt="Security Monitoring System" class="project-img">
+        <i class="fas fa-shield-alt project-icon"></i>
+        <div class="project-overlay">
+            <div class="project-overlay-content">
+                <h4>View Project</h4>
+                <p>Click to explore</p>
+            </div>
+        </div>
+    </div>
+    <div class="project-content">
+        <div class="project-header">
+            <h3>Security Monitoring System</h3>
+        </div>
+        <p>Desktop application for security management with real-time alerts, incident reporting, and
+            access control.</p>
+        <div class="project-tech">
+            <span><i class="fas fa-desktop"></i> Desktop</span>
+            <span><i class="fas fa-database"></i> MySQL</span>
+            <span><i class="fas fa-bell"></i> Real-time</span>
+        </div>
+        <div class="project-links">
+            <a href="https://github.com/EMMA-GLORYH" target="_blank" class="project-link">
+                <i class="fab fa-github"></i> Code
+            </a>
+            <a href="#" class="project-link">
+                <i class="fas fa-external-link-alt"></i> Demo
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- Project 5 - Educational Platform -->
+<div class="project-card" data-category="web" data-aos="fade-up" data-aos-delay="0">
+    <div class="project-image">
+        <img src="images/project-education.jpg" alt="ICT Learning Platform" class="project-img">
+        <i class="fas fa-graduation-cap project-icon"></i>
+        <div class="project-overlay">
+            <div class="project-overlay-content">
+                <h4>View Project</h4>
+                <p>Click to explore</p>
+            </div>
+        </div>
+    </div>
+    <div class="project-content">
+        <div class="project-header">
+            <h3>ICT Learning Platform</h3>
+        </div>
+        <p>Interactive learning management system for ICT education with quizzes, video lessons, and
+            progress tracking.</p>
+        <div class="project-tech">
+            <span><i class="fab fa-react"></i> React</span>
+            <span><i class="fas fa-fire"></i> Firebase</span>
+            <span><i class="fas fa-mobile-alt"></i> Responsive</span>
+        </div>
+        <div class="project-links">
+            <a href="https://github.com/EMMA-GLORYH" target="_blank" class="project-link">
+                <i class="fab fa-github"></i> Code
+            </a>

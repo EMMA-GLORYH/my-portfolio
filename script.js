@@ -1,6 +1,8 @@
 // ======================================
-// PROFESSIONAL PORTFOLIO - COMPLETE JS
+// ENHANCED PROFESSIONAL PORTFOLIO JS
 // ======================================
+
+'use strict';
 
 // ======================================
 // PRELOADER
@@ -13,7 +15,19 @@ window.addEventListener('load', () => {
         setTimeout(() => {
             preloader.style.display = 'none';
         }, 500);
-    }, 1000);
+    }, 1500);
+});
+
+// ======================================
+// SCROLL PROGRESS BAR
+// ======================================
+
+const scrollProgress = document.getElementById('scrollProgress');
+
+window.addEventListener('scroll', () => {
+    const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const scrolled = (window.pageYOffset / windowHeight) * 100;
+    scrollProgress.style.width = scrolled + '%';
 });
 
 // ======================================
@@ -35,6 +49,32 @@ scrollToTopBtn.addEventListener('click', () => {
         top: 0,
         behavior: 'smooth'
     });
+});
+
+// ======================================
+// DARK MODE TOGGLE
+// ======================================
+
+const themeToggle = document.getElementById('themeToggle');
+const body = document.body;
+
+// Check for saved theme preference
+const currentTheme = localStorage.getItem('theme') || 'light';
+if (currentTheme === 'dark') {
+    body.classList.add('dark-mode');
+    themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+}
+
+themeToggle.addEventListener('click', () => {
+    body.classList.toggle('dark-mode');
+
+    if (body.classList.contains('dark-mode')) {
+        themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+        localStorage.setItem('theme', 'dark');
+    } else {
+        themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+        localStorage.setItem('theme', 'light');
+    }
 });
 
 // ======================================
@@ -72,7 +112,9 @@ const texts = [
     'Full-Stack Developer',
     'ICT Educator',
     'Tech Innovator',
-    'Problem Solver'
+    'Problem Solver',
+    'Mobile Developer',
+    'Web Designer'
 ];
 let textIndex = 0;
 let charIndex = 0;
@@ -258,31 +300,57 @@ const skillsObserver = new IntersectionObserver(animateSkills, {
 skillBars.forEach(bar => skillsObserver.observe(bar));
 
 // ======================================
-// SCROLL REVEAL ANIMATIONS
+// AOS (ANIMATE ON SCROLL) IMPLEMENTATION
 // ======================================
 
-const revealElements = document.querySelectorAll('.project-card, .why-card, .timeline-item, .testimonial-card');
-
-const revealOnScroll = (entries, observer) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('reveal');
-            setTimeout(() => {
-                entry.target.classList.add('active');
-            }, 100);
-            observer.unobserve(entry.target);
-        }
-    });
-};
-
-const revealObserver = new IntersectionObserver(revealOnScroll, {
+const observerOptions = {
     threshold: 0.1,
     rootMargin: '0px 0px -50px 0px'
+};
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('aos-animate');
+        }
+    });
+}, observerOptions);
+
+document.querySelectorAll('[data-aos]').forEach(el => {
+    observer.observe(el);
 });
 
-revealElements.forEach(el => {
-    el.classList.add('reveal');
-    revealObserver.observe(el);
+// ======================================
+// PROJECT FILTER FUNCTIONALITY
+// ======================================
+
+const filterButtons = document.querySelectorAll('.filter-btn');
+const projectCards = document.querySelectorAll('.project-card');
+
+filterButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        // Remove active class from all buttons
+        filterButtons.forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
+
+        const filter = button.getAttribute('data-filter');
+
+        projectCards.forEach(card => {
+            if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                card.style.display = 'block';
+                setTimeout(() => {
+                    card.style.opacity = '1';
+                    card.style.transform = 'scale(1)';
+                }, 100);
+            } else {
+                card.style.opacity = '0';
+                card.style.transform = 'scale(0.8)';
+                setTimeout(() => {
+                    card.style.display = 'none';
+                }, 300);
+            }
+        });
+    });
 });
 
 // ======================================
@@ -305,6 +373,14 @@ navLinks.forEach(link => {
         hamburger.classList.remove('active');
         navMenu.classList.remove('active');
     });
+});
+
+// Close mobile menu when clicking outside
+document.addEventListener('click', (e) => {
+    if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
+        hamburger.classList.remove('active');
+        navMenu.classList.remove('active');
+    }
 });
 
 // ======================================
@@ -354,16 +430,13 @@ if (contactForm) {
         submitBtn.classList.add('loading');
         submitBtn.disabled = true;
 
-        // Simulate form submission
+        // Simulate form submission (replace with actual API call)
         setTimeout(() => {
             submitBtn.classList.remove('loading');
             submitBtn.disabled = false;
 
             // Show success message
             showFormStatus('Message sent successfully! I\'ll get back to you soon.', 'success');
-
-            // Create mailto link as backup
-            const mailtoLink = `mailto:elijah.hienwo@example.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`)}`;
 
             // Reset form
             contactForm.reset();
@@ -489,14 +562,17 @@ document.head.appendChild(notificationStyles);
 
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            const offsetTop = target.offsetTop - 70;
-            window.scrollTo({
-                top: offsetTop,
-                behavior: 'smooth'
-            });
+        const href = this.getAttribute('href');
+        if (href !== '#' && href.length > 1) {
+            e.preventDefault();
+            const target = document.querySelector(href);
+            if (target) {
+                const offsetTop = target.offsetTop - 70;
+                window.scrollTo({
+                    top: offsetTop,
+                    behavior: 'smooth'
+                });
+            }
         }
     });
 });
@@ -559,31 +635,44 @@ if (contactForm) {
     const formInputs = contactForm.querySelectorAll('input, textarea');
 
     formInputs.forEach(input => {
-        const savedValue = localStorage.getItem(input.id);
+        const savedValue = localStorage.getItem(`form_${input.id}`);
         if (savedValue) {
             input.value = savedValue;
         }
 
         input.addEventListener('input', () => {
-            localStorage.setItem(input.id, input.value);
+            localStorage.setItem(`form_${input.id}`, input.value);
         });
     });
 
     contactForm.addEventListener('submit', () => {
         formInputs.forEach(input => {
-            localStorage.removeItem(input.id);
+            localStorage.removeItem(`form_${input.id}`);
         });
     });
 }
 
 // ======================================
-// CONSOLE MESSAGE
+// SCROLL REVEAL ANIMATIONS
 // ======================================
 
-console.log('%c👋 Hello Developer!', 'color: #1e3a8a; font-size: 20px; font-weight: bold;');
-console.log('%cWelcome to my portfolio! Built with passion by Elijah Hienwo', 'color: #64748b; font-size: 14px;');
-console.log('%cInterested in working together? Let\'s connect!', 'color: #059669; font-size: 14px;');
-console.log('%cGitHub: https://github.com/EMMA-GLORYH', 'color: #1e40af; font-size: 12px;');
+const revealElements = document.querySelectorAll('.reveal');
+
+const revealOnScroll = (entries, observer) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+            observer.unobserve(entry.target);
+        }
+    });
+};
+
+const revealObserver = new IntersectionObserver(revealOnScroll, {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+});
+
+revealElements.forEach(el => revealObserver.observe(el));
 
 // ======================================
 // PERFORMANCE MONITORING
@@ -593,12 +682,47 @@ window.addEventListener('load', () => {
     if (window.performance && window.performance.timing) {
         const loadTime = window.performance.timing.domContentLoadedEventEnd -
             window.performance.timing.navigationStart;
-        console.log(`%cPage loaded in ${loadTime}ms`, 'color: #10b981; font-weight: bold;');
+        console.log(`%c⚡ Page loaded in ${loadTime}ms`, 'color: #10b981; font-weight: bold;');
     }
 });
+
+// ======================================
+// KEYBOARD NAVIGATION ENHANCEMENT
+// ======================================
+
+document.addEventListener('keydown', (e) => {
+    // Escape key closes mobile menu
+    if (e.key === 'Escape') {
+        hamburger.classList.remove('active');
+        navMenu.classList.remove('active');
+    }
+});
+
+// ======================================
+// CONSOLE BRANDING
+// ======================================
+
+console.log('%c👋 Hello Developer!', 'color: #1e3a8a; font-size: 24px; font-weight: bold;');
+console.log('%c🚀 Welcome to my portfolio!', 'color: #00CED1; font-size: 16px; font-weight: bold;');
+console.log('%cBuilt with passion by Elijah Hienwo', 'color: #64748b; font-size: 14px;');
+console.log('%c💼 Interested in working together? Let\'s connect!', 'color: #059669; font-size: 14px;');
+console.log('%c🔗 GitHub: https://github.com/EMMA-GLORYH', 'color: #1e40af; font-size: 12px;');
+console.log('%c📧 Contact: See the contact section below', 'color: #d97706; font-size: 12px;');
+
+// ======================================
+// PREVENT CONSOLE TAMPERING
+// ======================================
+
+(function () {
+    const devtools = /./;
+    devtools.toString = function () {
+        console.log('%c🛡️ Developer tools detected!', 'color: #dc2626; font-size: 16px; font-weight: bold;');
+        console.log('%cPlease respect intellectual property. Thanks!', 'color: #64748b; font-size: 12px;');
+    }
+})();
 
 // ======================================
 // END OF SCRIPT
 // ======================================
 
-console.log('%c✅ All scripts loaded successfully!', 'color: #059669; font-weight: bold;');
+console.log('%c✅ All scripts loaded successfully!', 'color: #059669; font-weight: bold; font-size: 14px;');
